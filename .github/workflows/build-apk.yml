@@ -14,14 +14,9 @@ jobs:
           java-version: '17'
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.3'
+          flutter-version: '3.19.6'
           channel: 'stable'
           cache: true
-      - name: Bypass v1 embedding check
-        run: |
-          sed -i 's/throwToolExit.*Android v1 embedding/print("WARN: v1 bypass") \/\/ /g' $FLUTTER_ROOT/packages/flutter_tools/lib/src/project.dart || true
-          rm -f $FLUTTER_ROOT/bin/cache/flutter_tools.snapshot* || true
-          flutter --version || true
       - run: flutter pub get
       - run: flutter build apk --debug
       - run: flutter build apk --release
