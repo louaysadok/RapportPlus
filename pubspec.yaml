@@ -36,7 +36,7 @@ dependencies:
   flutter_markdown: any
 
   # Forms & Editors
-  intl: ^0.18.1
+  intl: ^0.19.0
   uuid: ^4.2.1
 
   # Media & Files
