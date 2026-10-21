@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment pousser Rapport+ sur GitHub — Sans PC</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,system-ui,sans-serif;background:#FAFAF9;color:#111;line-height:1.6;padding:20px;max-width:700px;margin:0 auto}
+h1{font-size:22px;margin-bottom:8px}h2{font-size:16px;margin:20px 0 10px;background:#111;color:#fff;padding:8px 12px;border-radius:8px}
+.step{background:#fff;border:1px solid #E9EBEE;border-radius:12px;padding:14px;margin-bottom:12px}
+.num{width:28px;height:28px;background:#111;color:#fff;border-radius:50%;display:inline-grid;place-items:center;font-weight:700;font-size:12px;margin-right:8px}
+.tip{background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;padding:10px;font-size:12px;margin-top:10px}
+.warn{background:#FFFBEB;border:1px solid #FDE68A;border-radius:10px;padding:10px;font-size:12px;margin-top:10px}
+img{width:100%;border-radius:10px;border:1px solid #E9EBEE;margin:8px 0}
+a{color:#111;font-weight:600}
+.code{background:#111;color:#fff;padding:12px;border-radius:10px;font-family:monospace;font-size:11px;overflow:auto;margin:8px 0}
+</style>
+</head>
+<body>
+<h1>📱 Pousser Rapport+ sur GitHub — Sans PC (3 min)</h1>
+<p style="color:#8A8F98;font-size:13px">Depuis ton téléphone Android, avec Chrome seulement. GitHub va construire l'APK gratuitement.</p>
+
+<h2>Étape 0 — Télécharge le projet</h2>
+<div class="step">
+<p>Dans ce chat, dans la section <b>Fichiers</b> (à droite), tu vois :</p>
+<ul style="margin:8px 0 8px 20px;font-size:13px">
+<li><code>rapport_plus_project.zip</code> (78 Ko) — <b>Télécharge-le</b> sur ton téléphone</li>
+<li>Garde-le dans <b>Téléchargements</b></li>
+</ul>
+<div class="tip">💡 Si tu ne vois pas Fichiers : clique sur l'icône dossier en haut de ce chat → <code>rapport_plus_project.zip</code> → Download</div>
+</div>
+
+<h2>Étape 1 — Crée un compte GitHub</h2>
+<div class="step">
+<span class="num">1</span> Ouvre <b>Chrome</b> sur ton téléphone<br>
+<span class="num">2</span> Va sur <b>github.com</b><br>
+<span class="num">3</span> Clique <b>Sign up</b> → email / password → vérifie email<br>
+<span class="num">4</span> Connecte-toi
+<p style="font-size:12px;color:#8A8F98;margin-top:8px">Gratuit à vie — pas de carte bancaire.</p>
+</div>
+
+<h2>Étape 2 — Crée le repository</h2>
+<div class="step">
+<span class="num">1</span> Clique <b>+</b> en haut à droite → <b>New repository</b><br>
+<span class="num">2</span> Nom : <code>rapport-plus</code><br>
+<span class="num">3</span> Coche <b>Public</b> (obligatoire pour Actions gratuits)<br>
+<span class="num">4</span> Clique <b>Create repository</b>
+<div class="warn">⚠️ Ne coche pas "Add README" — laisse vide.</div>
+</div>
+
+<h2>Étape 3 — Upload le projet</h2>
+<div class="step">
+<span class="num">1</span> Sur la page vide, clique <b>uploading an existing file</b> (lien bleu)<br>
+<span class="num">2</span> Clique <b>choose your files</b><br>
+<span class="num">3</span> Va dans <b>Téléchargements</b> → sélectionne <code>rapport_plus_project.zip</code><br>
+<span class="num">4</span> Attends 100% → clique <b>Commit changes</b> (bouton vert)
+<p class="tip">💡 Alternative si zip pose problème :<br>
+- Décompresse le zip sur ton téléphone (app Files → long press → Extract)<br>
+- Sur GitHub, clique <b>Add file → Upload files</b> → sélectionne tous les fichiers décompressés</p>
+</div>
+
+<h2>Étape 4 — Le build se lance tout seul 🤖</h2>
+<div class="step">
+<span class="num">1</span> Clique onglet <b>Actions</b> en haut<br>
+<span class="num">2</span> Tu verras : <b>Build Rapport+ APK</b> 🟡 <i>in progress</i><br>
+<span class="num">3</span> Attends <b>8-12 minutes</b> (serveur GitHub compile)<br>
+<span class="num">4</span> Quand c'est vert ✅ → clique dessus
+</div>
+
+<h2>Étape 5 — Télécharge l'APK 📥</h2>
+<div class="step">
+<span class="num">1</span> Scroll en bas → section <b>Artifacts</b><br>
+<span class="num">2</span> Clique <b>rapport-plus-apks</b> → téléchargement<br>
+<span class="num">3</span> Décompresse → tu as <code>app-debug.apk</code> + <code>app-release.apk</code><br>
+<span class="num">4</span> Ouvre <code>app-debug.apk</code> → <b>Installer</b> → Autorise "Sources inconnues" si demandé → Ouvre l'app 🎉
+</div>
+
+<h2>En cas de problème</h2>
+<div class="step">
+<p style="font-size:13px">Contacte Louay sur WhatsApp : <b>+216 28671953</b><br>
+Ou dis-moi ici : "Bloqué à Étape X" et je t'envoie une capture écran.</p>
+</div>
+
+<h2>Alternative — Lien direct build</h2>
+<div class="step">
+<p style="font-size:13px">Une fois le repo créé, tu peux aussi déclencher le build manuellement :</p>
+<div class="code">Actions → Build Rapport+ APK → Run workflow → vert</div>
+<p style="font-size:12px;color:#8A8F98;margin-top:6px">Le fichier workflow est déjà dans le projet : <code>.github/workflows/build-apk.yml</code> — rien à configurer.</p>
+</div>
+
+<p style="text-align:center;margin-top:20px;font-size:11px;color:#8A8F98">Rapport+ v1.0 minimal · Dark mode sans violet · Fait en Tunisie 🇹🇳</p>
+</body>
+</html>

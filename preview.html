@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapport+ Minimal Dark — No Purple</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#111;--muted:#8A8F98;--line:#E9EBEE;--paper:#FAFAF9;--card:#fff}
+body{font-family:Inter,sans-serif;background:#E9EBEE;color:#111;transition:.25s}
+body.dark{background:#0A0A0A;color:#fff}
+.topbar{max-width:1100px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:34px;height:34px;background:#111;color:#fff;border-radius:10px;display:grid;place-items:center;font-weight:700;font-size:13px}
+.dark .logo{background:#fff;color:#111}
+.badge{padding:6px 10px;background:#fff;border:1px solid var(--line);border-radius:20px;font-size:11px;color:var(--muted)}
+.dark .badge{background:#1A1A1A;border-color:#2A2A2A;color:#9AA0AA}
+.layout{max-width:1100px;margin:0 auto;padding:0 16px 30px;display:grid;grid-template-columns:380px 1fr;gap:24px;align-items:start}
+@media(max-width:860px){.layout{grid-template-columns:1fr}}
+.phone-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;position:sticky;top:16px}
+.phone{width:min(360px,92vw);height:720px;max-height:74vh;background:#0A0A0A;border-radius:36px;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.screen{width:100%;height:100%;border-radius:26px;overflow:hidden;display:flex;flex-direction:column;background:var(--paper)}
+.dark .phone .screen{background:#0A0A0A}
+.status{height:20px;background:#fff;display:flex;justify-content:space-between;padding:0 16px;font-size:10px;color:var(--muted);border-bottom:1px solid var(--line)}
+.dark .status{background:#0A0A0A;border-color:#2A2A2A;color:#9AA0AA}
+.appbar{height:48px;background:#fff;display:flex;align-items:center;padding:0 12px;gap:10px;border-bottom:1px solid var(--line)}
+.dark .appbar{background:#0A0A0A;border-color:#2A2A2A;color:#fff}
+.content{flex:1;overflow:auto;padding:12px}
+.bottom{height:60px;background:#fff;border-top:1px solid var(--line);display:flex}
+.dark .bottom{background:#0A0A0A;border-color:#2A2A2A}
+.bi{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:10px;color:var(--muted);cursor:pointer}
+.bi.active{color:#111}.dark .bi.active{color:#fff}
+.bi.active .bicon{background:#111;color:#fff}.dark .bi.active .bicon{background:#fff;color:#111}
+.bicon{width:26px;height:26px;display:grid;place-items:center;border-radius:8px;font-size:13px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.dark .card{background:#1A1A1A;border-color:#2A2A2A}
+.btn{width:100%;padding:11px;border-radius:12px;font-weight:600;font-size:12px;cursor:pointer;border:1px solid transparent}
+.btnpri{background:#111;color:#fff}.dark .btnpri{background:#fff;color:#111}
+.btnghost{background:#fff;border-color:#E9EBEE;color:#111}.dark .btnghost{background:#1A1A1A;border-color:#2A2A2A;color:#fff}
+.entry{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:8px}
+.dark .entry{background:#1A1A1A;border-color:#2A2A2A}
+.tag{padding:3px 8px;border-radius:20px;font-size:10px;font-weight:600;border:1px solid var(--line);background:#fff}
+.dark .tag{background:#0A0A0A;border-color:#2A2A2A;color:#9AA0AA}
+.small{font-size:11px;color:var(--muted)}.dark .small{color:#9AA0AA}
+.switch{width:38px;height:22px;background:#E5E7EB;border-radius:20px;position:relative;cursor:pointer;transition:.2s}
+.switch.on{background:#111}.dark .switch.on{background:#fff}
+.knob{width:16px;height:16px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.switch.on .knob{left:19px}.dark .switch .knob{background:#fff}.dark .switch.on .knob{background:#111}
+.toggleBar{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:12px;cursor:pointer}
+.dark .toggleBar{background:#1A1A1A;border-color:#2A2A2A}
+</style>
+</head>
+<body id="body">
+<div class="topbar">
+  <div class="brand"><div class="logo">R+</div><div><h1 style="font-size:15px;font-weight:700">Rapport+ <span style="font-weight:400;color:var(--muted);font-size:11px">minimal dark</span></h1><p style="font-size:11px;color:var(--muted)">Thème minimal — zéro violet, switch fonctionnel</p></div></div>
+  <div style="display:flex;gap:8px;align-items:center">
+    <span class="small">Clair</span>
+    <div class="switch" id="globalSwitch" onclick="toggleGlobal()"><div class="knob"></div></div>
+    <span class="small">Sombre</span>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="phone-wrap">
+    <div class="phone"><div class="screen">
+      <div class="status"><span>14:32</span><span>84%</span></div>
+      <div class="appbar"><b style="font-size:13px">Réglages</b><div style="flex:1"></div><div style="width:28px;height:28px;border:1px solid var(--line);border-radius:8px;display:grid;place-items:center;font-size:12px">?</div></div>
+      <div class="content" id="phone"></div>
+      <div class="bottom">
+        <div class="bi" onclick="go('accueil')"><div class="bicon">⌂</div>Accueil</div>
+        <div class="bi" onclick="go('journal')"><div class="bicon">≡</div>Journal</div>
+        <div class="bi" onclick="go('rapport')"><div class="bicon">◧</div>Rapport</div>
+        <div class="bi" onclick="go('soutenance')"><div class="bicon">◐</div>Soutenance</div>
+        <div class="bi active"><div class="bicon">⚙</div>Réglages</div>
+      </div>
+    </div></div>
+    <div class="small">Switch ci-dessus change tout l'app — sans violet, surfaceTint transparent</div>
+  </div>
+
+  <div style="display:grid;gap:12px">
+    <div class="card"><b style="font-size:13px">Dark mode corrigé — no purple shading ✅</b><p class="small" style="margin-top:6px">Avant : Material3 mettait un voile violet via <code>surfaceTint</code>. Maintenant : <code>surfaceTint: transparent</code> + palette neutre #0A0A0A / #1A1A1A / #2A2A2A. Switch fonctionnel et persistant (SharedPreferences).</p></div>
+    <div class="card"><b style="font-size:12px">Fichiers modifiés</b><div style="margin-top:8px;font-family:monospace;font-size:11px;background:#111;color:#E5E7EB;padding:10px;border-radius:10px">lib/core/theme/app_theme.dart → darkScaffold #0A0A0A, darkCard #1A1A1A, surfaceTint transparent
+lib/core/theme/theme_provider.dart → NEW Riverpod + prefs
+lib/main.dart → themeMode watch provider
+lib/features/settings/settings_screen.dart → switch wired</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:10px"><div style="width:10px;height:10px;background:#0A0A0A;border:1px solid #2A2A2A;border-radius:50%"></div><span style="font-size:12px">Scaffold sombre #0A0A0A</span><div style="width:10px;height:10px;background:#1A1A1A;border:1px solid #2A2A2A;border-radius:50%;margin-left:12px"></div><span style="font-size:12px">Card #1A1A1A</span><div style="width:10px;height:10px;background:#2A2A2A;border-radius:50%;margin-left:12px"></div><span style="font-size:12px">Bord #2A2A2A</span></div>
+  </div>
+</div>
+
+<script>
+let dark=false;
+function toggleGlobal(){
+  dark=!dark;
+  document.getElementById('body').classList.toggle('dark',dark);
+  document.getElementById('globalSwitch').classList.toggle('on',dark);
+  render();
+}
+const lightSettings=`<div class="card" style="display:flex;gap:10px;align-items:center"><div style="width:36px;height:36px;background:#111;border-radius:50%;display:grid;place-items:center;color:#fff">A</div><div style="flex:1"><b style="font-size:12px">Ahmed Ben Ali</b><div class="small">ISET Sousse · Génie Logiciel</div></div><div style="width:28px;height:28px;border:1px solid var(--line);border-radius:8px;display:grid;place-items:center">✎</div></div>
+<div style="margin:12px 0 6px 4px;font-size:11px;font-weight:600">Apparence</div>
+<div class="card" style="padding:0;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px"><div><b style="font-size:12px">Mode sombre</b><div class="small">Noir pur, sans violet — tap pour basculer</div></div><div class="switch" id="inSwitch" onclick="toggleGlobal()"><div class="knob"></div></div></div>
+  <div style="height:1px;background:var(--line)"></div>
+  <div style="display:flex;justify-content:space-between;padding:12px"><div><b style="font-size:12px">Langue</b><div class="small">Français</div></div><span>›</span></div>
+</div>
+<div style="margin:12px 0 6px 4px;font-size:11px;font-weight:600">Intelligence artificielle — déplacée ici</div>
+<div class="card"><div style="display:flex;gap:8px;align-items:center"><span>◐</span><b style="font-size:12px">Modèles locaux</b><span class="tag" style="margin-left:auto">Aucun installé</span></div><div class="small" style="margin-top:6px">L'app fonctionne sans IA. Installe Qwen2.5-3B / TinyLlama.</div><button class="btn btnghost" style="margin-top:10px">Gérer les modèles</button></div>`;
+
+const darkSettings=`<div class="card" style="display:flex;gap:10px;align-items:center"><div style="width:36px;height:36px;background:#fff;border-radius:50%;display:grid;place-items:center;color:#111">A</div><div style="flex:1"><b style="font-size:12px">Ahmed Ben Ali</b><div class="small">ISET Sousse · Génie Logiciel</div></div><div style="width:28px;height:28px;border:1px solid #2A2A2A;border-radius:8px;display:grid;place-items:center">✎</div></div>
+<div style="margin:12px 0 6px 4px;font-size:11px;font-weight:600;color:#fff">Apparence</div>
+<div class="card" style="padding:0;overflow:hidden">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px"><div><b style="font-size:12px">Mode sombre</b><div class="small">Activé — noir pur #0A0A0A</div></div><div class="switch on" onclick="toggleGlobal()"><div class="knob"></div></div></div>
+  <div style="height:1px;background:#2A2A2A"></div>
+  <div style="display:flex;justify-content:space-between;padding:12px"><div><b style="font-size:12px">Langue</b><div class="small">Français</div></div><span>›</span></div>
+</div>
+<div style="margin:12px 0 6px 4px;font-size:11px;font-weight:600;color:#fff">Intelligence artificielle</div>
+<div class="card"><div style="display:flex;gap:8px;align-items:center"><span>◐</span><b style="font-size:12px">Modèles locaux</b><span class="tag" style="margin-left:auto">Aucun installé</span></div><div class="small" style="margin-top:6px">Mode sombre sans violet — surfaceTint transparent.</div><button class="btn btnghost" style="margin-top:10px">Gérer les modèles</button></div>`;
+
+function render(){
+  document.getElementById('phone').innerHTML = dark ? darkSettings : lightSettings;
+  if(dark) document.getElementById('inSwitch')?.classList.add('on');
+}
+render();
+</script>
+</body>
+</html>
